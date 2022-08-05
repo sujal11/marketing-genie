@@ -323,8 +323,9 @@ $(document).on('submit', '#product-details', function(e){
 
 
           var options = {
-            title:'There are '+myObj.review['neg']+' Negative Reviews and '+myObj.review['pos']+' Positive Reviews of "'+products+'"',
-            is3D:true
+            title:'There are '+myObj.review['Negative']+' Negative Reviews and '+myObj.review['Positive']+' Positive Reviews of "'+products+'"',
+            is3D:true,
+            colors: ['red', 'green']
           };
 
           var chart = new google.visualization.PieChart(document.getElementById('myChart'));

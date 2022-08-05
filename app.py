@@ -178,14 +178,14 @@ def insights():
         cursor.execute('SELECT review_text FROM Dataset WHERE product_name = ?',products)
         data=cursor.fetchall()
         nltk.download('vader_lexicon')
-        reviews={'neg':0,'pos':0}
+        reviews={'Negative':0,'Positive':0}
         for review in data:
             sid=SentimentIntensityAnalyzer()
             sa=sid.polarity_scores(str(review))
             if sa['neg']>sa['pos']:
-                reviews['neg']=reviews['neg']+1
+                reviews['Negative']=reviews['Negative']+1
             else:
-                reviews['pos']=reviews['pos']+1
+                reviews['Positive']=reviews['Positive']+1
         return { 'review':reviews }
 
     #For structured dataset OrderStatuses are listed:
@@ -572,6 +572,7 @@ def query_convert():
         return {'columns':vals,'products':final_details,'time':time_sort,'rows':rows}
     else:
         return {'columns':None,'products':None,'time':None,'rows':None}
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

@@ -1,0 +1,88 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Trendsetter Analyser{% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} landing-page {% endblock body_class %}
+
+{% block content %}
+
+<main>
+    <section>
+        <div id="myChart" style="width:100%; height:500px;"></div>
+    </section>
+</main>
+<script>
+$(document).on('submit', '#product-details', function(e){
+    e.preventDefault();
+    var form = $('#product-details');
+    let products = $('#product').val();
+    let review = $('#review').val();
+    let order_status = $('#order-status').val();
+    console.log(statement);
+    jsondata={
+      "products":products,
+      "review":review,
+      "open_status":open_status
+    }
+    $("#btn-send").prop("disabled", true);
+    $.ajax({
+      type: "POST",
+      data: jsondata,
+      url:"/get-insights",
+      dataType: "json",
+        complete: function(resp){
+          const myObj = JSON.parse(resp.responseText);
+          $("#btn-send").prop("disabled", false); 
+          if (review==True){
+              google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Sentiment', 'Percentage'],
+            ['Positive',myObj.pos],
+            ['Negative',myObj.neg],
+            ['Neutral',myObj.neu]
+          ]);
+
+          var options = {
+            title:'Sentiments of statement "' + statement + '"',
+            is3D:true
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+            chart.draw(data, options);
+          }
+          }
+          if (order_status==True){
+              google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Sentiment', 'Percentage'],
+            ['Positive',myObj.pos],
+            ['Negative',myObj.neg],
+            ['Neutral',myObj.neu]
+          ]);
+
+          var options = {
+            title:'Sentiments of statement "' + statement + '"',
+            is3D:true
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+            chart.draw(data, options);
+          }
+          }
+		  console.log(resp.responseText);
+          }
+          // enabled the submit button
+        
+      });
+});
+</script>
+{% endblock content %}
