@@ -33,7 +33,7 @@ section.register-form{
 #upload{
   font-weight: 800;
     background-color:black;
-    border: 1px;
+    border: 1px solid #F0DC93;
     padding: 7px;
     color: #F0DC93;
     border-radius: 8px;
