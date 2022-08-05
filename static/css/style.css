@@ -9,11 +9,12 @@
   background-color:black;
   padding-left:40px;
   padding-right:40px;
+
 }
-.navbar-brand{ 
+.navbar-nav{ 
   text-align:center;
   font-weight:800; 
-  color:#F0DC93;
+  color:#F0DC93 !important;
   font-size:41px !important;
   padding-top: 25px !important;
 }
