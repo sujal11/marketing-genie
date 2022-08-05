@@ -27,7 +27,7 @@ form#upload-form{
 }
 section.register-form{
   padding-top: 50px;
-  padding-left:33.3%;
+  padding-left:38%;
   height: 50vh;
   border:2px solid #F0DC93;
 }
@@ -47,7 +47,12 @@ input#file-upload-button{
     color: #F0DC93; 
     border-radius: 8px;
 }
-
+input::file-selector-button{
+  background-color:black;
+  color:#F0DC93;
+  border:1px solid #F0DC93;
+  border-radius:8px;
+}
 body {
 background-color: #242F3F;
 }
