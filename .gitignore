@@ -1,2 +1,7 @@
 /venv
-app2.py
+/minio
+.env
+/migrations
+/db
+/static/datasets
+/__pycache__
