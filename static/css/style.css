@@ -10,7 +10,7 @@
   padding-left:40px;
   padding-right:40px;
 }
-.navbar-brand{
+.navbar-brand{ 
   text-align:center;
   font-weight:800; 
   color:#F0DC93;
@@ -44,7 +44,7 @@ background-color: #242F3F;
 }
 
 .loader-wrapper{
-  background-color:#F0DC9;
+  background-color:#F0DC93;
   height: 100vh;
   width: 100vw;
   visibility:none;
