@@ -41,7 +41,7 @@ section.register-form{
 input#file-upload-button{
   font-weight: 800;
     background-color: black;
-    border: 0;
+    border: 1px;
     padding: 7px;
     color: #F0DC93; 
     border-radius: 8px;
