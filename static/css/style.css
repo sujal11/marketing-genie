@@ -27,7 +27,7 @@ section.register-form{
     background-color: white;
     border: 0;
     padding: 7px;
-    color: #e20074;
+    color: #F0DC93;
     border-radius: 8px;
 }
 input#file-upload-button{
@@ -35,7 +35,7 @@ input#file-upload-button{
     background-color: white;
     border: 0;
     padding: 7px;
-    color: #e20074;
+    color: #F0DC93; 
     border-radius: 8px;
 }
 
@@ -44,7 +44,7 @@ background-color: #242F3F;
 }
 
 .loader-wrapper{
-  background-color:#E20074;
+  background-color:#F0DC9;
   height: 100vh;
   width: 100vw;
   visibility:none;
