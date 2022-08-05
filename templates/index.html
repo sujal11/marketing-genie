@@ -1,0 +1,36 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Trendsetter Analyser{% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} landing-page {% endblock body_class %}
+
+{% block content %}
+
+<main>
+<section class="register-form">
+    <div class="container form">
+    <div class="row reg-form" style="color:white;">
+      <form id="upload-form" name="fileupload"  action = "upload-dataset" method = "POST" enctype = "multipart/form-data">
+        <input type="file" id="uploaded" name="file" accept=".xlsx,.xls,.csv"><br><br>
+          <p>Please select type of dataset chosen:</p>
+          <input type="radio" id="structured" name="structure" value='structured'>
+          <label for="structured">Structured</label><br>
+          <input type="radio" id="unstructured" name="structure" value="unstructured">
+          <label for="unstructured">Unstructured</label><br>  <br>
+        <input type="submit" id="upload" value="Submit"> <span class="loader" style="top:1% !important; left:1% !important;"><span class="loader-inner"></span></span></div>
+      </form>
+  </div>
+  
+</section>
+</main>
+<script>
+
+    $(".loader").css("visibility","hidden");
+$(document).on('click', '#upload', function(e){
+    $(".loader").css("visibility","visible");
+});
+</script>
+{% endblock content %}
