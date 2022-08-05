@@ -133,9 +133,13 @@ $(document).on('submit', '#textToSpeech', function(e){
           document.getElementById('empty-info').innerHTML='';
           //$("#btn-send").prop("disabled", false); 
           $(".loader1").css("visibility","hidden");
-          if (myObj.columns==null || myObj.products==null){
-            document.getElementById('if-not-get').innerHTML=`Please make sure you've asked according to the given dataset or recheck your spellings`;
+          
+          if (myObj.products==null){
+            alert("No Products mentioned!");
           }
+          /*if (myObj.columns==null){
+            document.getElementById('if-not-get').innerHTML=`Please make sure you've asked according to the given dataset or recheck your spellings`;
+          }*/
           else{
             google.charts.load("current", {packages:['corechart']});
             $("#monthly").css("display","block");

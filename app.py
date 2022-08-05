@@ -14,6 +14,7 @@ from statistics import mean
 import geopy
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
+from textblob import TextBlob
   
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
