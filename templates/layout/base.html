@@ -39,7 +39,18 @@
         {% include 'includes/footer.html' %}
     </div>
   <!-- Specific Page JS goes HERE  -->
-  {% block javascripts %}{% endblock javascripts %}
+  {% block javascripts %}
+  <script>
+  $('.togglebtn').change(function(){
+   var element = document.body;
+   element.classList.toggle("black-theme");
+  });
+  function toggleFunction() {
+   var element = document.body;
+   element.classList.toggle("black-theme");
+  }
+   </script>
+   {% endblock javascripts %}
 
 </body>
 </html>
