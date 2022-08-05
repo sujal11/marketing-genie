@@ -12,6 +12,9 @@
   padding-right:40px;
 
 }
+form#upload-form{
+  color:#f0dc93;
+}
 .navbar-nav b{ 
   text-align:center;
   font-weight:800; 
@@ -29,7 +32,7 @@ section.register-form{
 }
 #upload{
   font-weight: 800;
-    background-color:#F0DC93;
+    background-color:black;
     border: 0;
     padding: 7px;
     color: #F0DC93;
@@ -37,7 +40,7 @@ section.register-form{
 }
 input#file-upload-button{
   font-weight: 800;
-    background-color: #f0dc93;
+    background-color: black;
     border: 0;
     padding: 7px;
     color: #F0DC93; 
