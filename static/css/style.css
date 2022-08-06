@@ -97,6 +97,8 @@ section.register-form{
   height: 50vh;
   border:2px solid #F0DC93;
 }
+  /* The alert message box */
+
 .black-theme section.register-form{
   padding-top: 50px !important;
   padding-left:38% !important;
@@ -104,7 +106,7 @@ section.register-form{
   border:2px solid black;
   border-top:0px;
 }
-#upload{
+#upload, .swal2-confirm{
   font-weight: 800;
     background-color:black !important;
     border: 1px solid #F0DC93 !important;

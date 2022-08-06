@@ -100,6 +100,7 @@
         </div>
             </div>
         </div>
+        
     </section>
 </main>
 <script>
@@ -107,6 +108,7 @@ $(".loader1").css("visibility","hidden");
 $(".loader2").css("visibility","hidden");
 $("#monthly").css("display","none");
 $("#locationwise").css("display","none");
+
 $(document).on('submit', '#textToSpeech', function(e){
     e.preventDefault();
     var form = $('#textToSpeech');
@@ -135,7 +137,7 @@ $(document).on('submit', '#textToSpeech', function(e){
           $(".loader1").css("visibility","hidden");
           
           if (myObj.products==null){
-            alert("No Products mentioned!");
+            Swal.fire('No Product found!')
           }
           /*if (myObj.columns==null){
             document.getElementById('if-not-get').innerHTML=`Please make sure you've asked according to the given dataset or recheck your spellings`;

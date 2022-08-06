@@ -15,7 +15,12 @@ import geopy
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 from textblob import TextBlob
+from nltk.corpus import words
   
+  
+correct_words = words.words()
+  
+nltk.download('words')
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 load_dotenv()
@@ -279,21 +284,24 @@ def query_convert():
 #-----------Fetching column names from user query start----------------------
     for i in possible_columns:
         if len(i)>1:
-            vals[i]=[]
-            pro[i]=[]
+            a=TextBlob(i)
+            b=str(a.correct())
+            print(b)
+            vals[b]=[]
+            pro[b]=[]
             for column in columns:
-                if i.lower() in column.lower():
-                    vals[i].append(column)
-            if vals[i]==[]:
-                del vals[i]
+                if b.lower() in column.lower():
+                    vals[b].append(column)
+            if vals[b]==[]:
+                del vals[b]
 #-----------Fetching column names from user query end----------------------
         
 #-----------Fetching products from user query start----------------------
             for product in data:
-                if i.lower() in product[0].lower():
-                    pro[i].append(product[0])
-            if pro[i]==[]:
-                del pro[i]
+                if b.lower() in product[0].lower():
+                    pro[b].append(product[0])
+            if pro[b]==[]:
+                del pro[b]
             val=list(pro.values())
             print(val)
     product=[]
