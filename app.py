@@ -9,6 +9,7 @@ import sqlite3
 import utils
 from nltk.tokenize import word_tokenize
 import nltk
+import en_core_web_sm
 import locationtagger
 from statistics import mean
 import geopy
@@ -16,14 +17,16 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 from textblob import TextBlob
 from nltk.corpus import words
-  
-  
-correct_words = words.words()
+nltk.download('maxent_ne_chunker')
   
 nltk.download('words')
+correct_words = words.words()
+  
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 load_dotenv()
+
+
 
 app = Flask(__name__)
 
@@ -154,9 +157,9 @@ def main():
     #Data preprocessing END
 
     # Uncomment to enter a new dataset
-    # Dataframe.to_sql(name='Dataset',con=con,if_exists='replace') # Dataset converted to RDBMS table
+    Dataframe.to_sql(name='Dataset',con=con,if_exists='replace') # Dataset converted to RDBMS table
 
-    # con.commit()
+    con.commit()
     
     cursor.execute('select "product_name" from Dataset;')
     result = cursor.fetchall()

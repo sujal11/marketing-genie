@@ -1,6 +1,4 @@
 /venv
-.env
 /migrations
 /db
-/static/datasets
 /__pycache__

@@ -15,11 +15,11 @@
     <div class="row reg-form" style="color:white;">
       <form id="upload-form" name="fileupload"  action = "upload-dataset" method = "POST" enctype = "multipart/form-data">
         <input type="file" id="uploaded" name="file" accept=".xlsx,.xls,.csv"><br><br>
-          <p>Please select type of dataset chosen:</p>
+          <p>What do you want from this dataset:</p>
           <input type="radio" id="structured" name="structure" value='structured'>
-          <label for="structured">Structured</label><br>
+          <label for="structured">Get Insights</label><br>
           <input type="radio" id="unstructured" name="structure" value="unstructured">
-          <label for="unstructured">Unstructured</label><br>  <br>
+          <label for="unstructured">Sentiment Analysis</label><br>  <br>
         <input type="submit" id="upload" value="Submit"> <span class="loader" style="top:1% !important; left:1% !important;"><span class="loader-inner"><img class="dark-loader" src='static/img/loader-dark.gif'><img class="light-loader" src='static/img/loader-light.gif'></span></span></div>
       </form>
   </div>
